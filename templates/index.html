@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Classification Web App</title>
+  </head>
+  <body>
+    <h1>Image Classification Web App</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required />
+      <input type="submit" value="Upload" />
+    </form>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %} {% if predicted_class %}
+    <p>Predicted Class: {{ predicted_class }}</p>
+    {% endif %}
+  </body>
+</html>
